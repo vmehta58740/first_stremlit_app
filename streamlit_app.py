@@ -1,6 +1,7 @@
 import streamlit
 import pandas
-
+import requests
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
 
 streamlit.title('Hello GitHub and stremlit')
 streamlit.header('Breakfast Menu')
@@ -10,6 +11,7 @@ streamlit.text('🐔 Hard-Boiled Free-Range Egg')
 streamlit.text('🥑🍞 Avacodo Toast')
 
 streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
+streamlit.text(fruityvice_response)
 
 my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 my_fruit_list = my_fruit_list.set_index('Fruit')
